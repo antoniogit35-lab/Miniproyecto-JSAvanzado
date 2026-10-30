@@ -1,0 +1,57 @@
+:root{--bg:#0f1115;--panel:#171a21;--panel-2:#1f2430;--text:#f2f4f8;--muted:#a7b0c0;--accent:#5ea0ff;--accent-2:#7ef0c2;--border:#2a3140;--radius:16px;--shadow:0 10px 30px #0005;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#0c0e13,#11151d);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+.container{width:min(1200px,calc(100% - 32px));margin:auto}
+a{color:var(--accent-2)}
+.hero{display:flex;align-items:center;gap:24px;margin-top:32px;padding:32px;border:1px solid var(--border);border-radius:24px;background:linear-gradient(135deg,#5ea0ff26,#7ef0c214);box-shadow:var(--shadow)}
+.hero>div{flex:1;min-width:0}
+.library-logo{width:clamp(140px,20vw,220px);height:auto;object-fit:contain}
+h1{font-size:clamp(2rem,4vw,3.3rem);line-height:1.1;margin:0 0 18px}
+h2{font-size:1.5rem;margin:0 0 16px}
+h3{font-size:1.05rem}
+p{color:var(--muted)}
+.eyebrow{color:var(--accent-2);text-transform:uppercase;letter-spacing:.1em;font-size:.75rem}
+.notice{font-size:.85rem;border-left:3px solid var(--accent);padding-left:12px}
+nav{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+nav a{padding:8px 14px;border:1px solid var(--border);border-radius:10px;text-decoration:none;background:var(--panel)}
+section{padding:28px 0;border-bottom:1px solid var(--border);scroll-margin-top:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px}
+.card{min-width:0;background:var(--panel);padding:18px;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.card h3{margin:14px 0 4px}
+.cover{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:12px;background:var(--panel-2)}
+.subtitle{margin:0 0 12px;font-size:.9rem}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0}
+.meta div{min-width:0;background:var(--panel-2);padding:10px;border-radius:10px}
+dt{font-size:.75rem;color:var(--muted)}
+dd{margin:0;overflow-wrap:anywhere;font-size:.9rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.stat-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.stat-value{font-size:2rem;color:var(--accent-2);margin:4px 0 0}
+.ranking{display:grid;gap:10px;padding:0;list-style:none;counter-reset:puesto}
+.ranking li{counter-increment:puesto;display:flex;align-items:center;gap:16px;padding:16px;background:var(--panel);border:1px solid var(--border);border-radius:12px}
+.ranking li::before{content:counter(puesto) ".";color:var(--accent);font-weight:700}
+.ranking .rank-name{flex:1}
+.ranking .rank-value{color:var(--accent-2);white-space:nowrap}
+.checks{display:grid;gap:10px;list-style:none;padding:0}
+.checks li{padding:14px;border:1px solid var(--border);border-radius:10px;background:var(--panel)}
+label{display:block;margin-bottom:6px;color:var(--muted)}
+input,select,button{font:inherit;border:1px solid var(--border);border-radius:10px;padding:11px 14px;background:var(--panel);color:var(--text)}
+input,select{width:100%}
+#categoria{max-width:340px}
+button{cursor:pointer;background:#5ea0ff20}
+button:hover,nav a:hover{border-color:var(--accent);background:#5ea0ff30}
+button,nav a{transition:background .2s,border-color .2s}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.searches{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+form{display:grid;gap:10px;align-content:start}
+.premium{border:1px solid #7ef0c255;border-radius:var(--radius);padding:24px;margin-top:28px;background:#7ef0c208}
+.properties{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}
+.properties li{border:1px solid var(--border);border-radius:8px;padding:6px 10px;background:var(--panel-2)}
+.table-scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;text-align:left}
+th,td{padding:10px 14px;border-bottom:1px solid var(--border);overflow-wrap:anywhere}
+th{color:var(--accent-2);background:var(--panel-2)}
+pre{overflow-x:auto;padding:20px;border-radius:12px;background:var(--panel);border:1px solid var(--border);font-size:.85rem}
+footer{padding:32px 0;text-align:center;font-size:.85rem}
+@media(max-width:640px){.hero{flex-direction:column;padding:24px}.library-logo{width:150px}.searches{grid-template-columns:1fr}.ranking li{flex-wrap:wrap}.ranking .rank-name{flex-basis:65%}.premium{padding:18px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
